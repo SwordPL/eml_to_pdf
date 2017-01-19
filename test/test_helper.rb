@@ -8,6 +8,14 @@ class MiniTest::Test
   TEST_FOLDER_PATH = Pathname.new(File.expand_path(__dir__))
 
   def email_fixture_path(name)
+    EmlToPdf::FileEmailProvider.new(fixture_path(name + ".eml", :emails))
+  end
+
+  def read_email_fixture_path(name)
+    File.read(fixture_path(name + ".eml", :emails))
+  end
+
+  def raw_email_fixture_path(name)
     fixture_path(name + ".eml", :emails)
   end
 

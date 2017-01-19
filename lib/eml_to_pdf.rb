@@ -7,6 +7,8 @@ require "eml_to_pdf/wkhtmltopdf"
 require "eml_to_pdf/metadata_context"
 require "eml_to_pdf/extraction_step"
 require "eml_to_pdf/extraction_step_list"
+require "eml_to_pdf/file_email_provider"
+require "eml_to_pdf/memory_email_provider"
 
 module EmlToPdf
   def self.convert(input, output)

@@ -1,15 +1,13 @@
 require "pathname"
 require "nokogiri"
-require "mail"
 require "erb"
 
 module EmlToPdf
   class Email
-    TEMPLATES_PATH = Pathname.new(File.expand_path(__dir__)) + "templates"
+    TEMPLATES_PATH = Pathname.new(File.expand_path(__dir__)) + 'templates'
 
-    def initialize(input_path)
-      @input_path = input_path
-      @mail = Mail.read(input_path)
+    def initialize(email_provider)
+      @mail = email_provider.email
     end
 
     def to_html
