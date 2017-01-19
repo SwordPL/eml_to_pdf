@@ -1,9 +1,9 @@
 module EmlToPdf
   class ExtractionStep
     MIME_TYPES = {
-      plain_text: "text/plain",
-      html: "text/html",
-      multipart_alternative: "multipart/alternative"
+      plain_text: 'text/plain',
+      html: 'text/html',
+      multipart_alternative: 'multipart/alternative'
     }
 
     def initialize(mail_or_part)
