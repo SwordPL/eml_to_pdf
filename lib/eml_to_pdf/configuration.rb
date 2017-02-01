@@ -1,11 +1,12 @@
 module EmlToPdf
   class Configuration
-    attr_accessor :from_label, :to_label, :cc_label, :date_label, :metadata_visible
+    attr_accessor :from_label, :to_label, :cc_label, :date_label, :metadata_visible, :links_enabled
 
     def initialize
       @from_label, @to_label, @cc_label, @date_label= 'From', 'To', 'Cc', 'Date'
       @date_format = lambda { |date| date.strftime('%Y-%m-%d %H:%M:%S %z') }
       @metadata_visible = true
+      @links_enabled = true
     end
 
     def date_format(&block)
