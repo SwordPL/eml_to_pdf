@@ -78,11 +78,21 @@ module EmlToPdf
 
     def disable_links(html)
       doc = Nokogiri::HTML(html)
-      doc.css('a').reject do |x|
+
+      links = doc.css('a')
+
+      links.select do |x|
+        allowed_formats.any? { |format| x['href'].start_with?(format) }
+      end.each do |x|
+        x['target'] = ''
+      end
+
+      links.reject do |x|
         allowed_formats.any? { |format| x['href'].start_with?(format) }
       end.each do |x|
         x['target'] = '_blank'
       end
+
       doc.to_html
     end
 
