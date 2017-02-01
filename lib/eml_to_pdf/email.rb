@@ -78,7 +78,7 @@ module EmlToPdf
 
     def disable_links(html)
       doc = Nokogiri::HTML(html)
-      doc.css('a').each { |x| x.attributes['target'] = '_blank' }
+      doc.css('a').each { |x| x['target'] = '_blank' }
       doc.to_html
     end
 
