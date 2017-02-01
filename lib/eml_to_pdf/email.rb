@@ -87,7 +87,7 @@ module EmlToPdf
     end
 
     def links_disabled?
-      EmlToPdf.configuration.metadata_visible
+      !EmlToPdf.configuration.links_enabled
     end
   end
 end
