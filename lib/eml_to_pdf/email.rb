@@ -15,7 +15,7 @@ module EmlToPdf
       extraction = extraction.next until extraction.finished?
       html = extraction.to_html
       html = resolve_cids_from_attachments(html, @mail.all_parts)
-      html = disable_links(html) if links_disabled?
+      html = disable_links(html) unless links_enabled?
       html = add_mail_metadata_to_html(@mail, html) if display_metadata?
       html
     end
@@ -78,7 +78,11 @@ module EmlToPdf
 
     def disable_links(html)
       doc = Nokogiri::HTML(html)
-      doc.css('a').each { |x| x['target'] = '_blank' }
+      doc.css('a').reject do |x|
+        allowed_formats.any? { |format| x['href'].start_with?(format) }
+      end.each do |x|
+        x['target'] = '_blank'
+      end
       doc.to_html
     end
 
@@ -86,8 +90,12 @@ module EmlToPdf
       EmlToPdf.configuration.metadata_visible
     end
 
-    def links_disabled?
-      !EmlToPdf.configuration.links_enabled
+    def links_enabled?
+      EmlToPdf.configuration.links_enabled
+    end
+
+    def allowed_formats
+      EmlToPdf.configuration.link_format_whitelist
     end
   end
 end
