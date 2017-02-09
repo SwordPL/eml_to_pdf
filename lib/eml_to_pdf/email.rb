@@ -81,7 +81,7 @@ module EmlToPdf
 
       links = doc.css('a')
 
-      links.select do |x|
+      links.reject { |x| x['href'].nil? }.select do |x|
         allowed_formats.any? { |format| x['href'].start_with?(format) }
       end.each do |x|
         x['target'] = ''
