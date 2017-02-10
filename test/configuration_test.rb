@@ -3,20 +3,20 @@ require 'test_helper'
 class ConfigurationTest < MiniTest::Test
   def teardown
     super
-    EmlToPdf.reset_configuration!
+    EmlToPdfExt.reset_configuration!
   end
 
   def test_basic_configuration
     example_to_label = "Who to:"
-    EmlToPdf.configure do |config|
+    EmlToPdfExt.configure do |config|
       config.to_label = example_to_label
     end
-    assert_equal example_to_label, EmlToPdf.configuration.to_label
+    assert_equal example_to_label, EmlToPdfExt.configuration.to_label
   end
 
   def test_output_with_config
     # French setup
-    EmlToPdf.configure do |config|
+    EmlToPdfExt.configure do |config|
       config.from_label = "De:"
       config.to_label = "À:"
       config.cc_label = "Cc:"
@@ -34,7 +34,7 @@ class ConfigurationTest < MiniTest::Test
   end
 
   def test_no_output_with_config
-    EmlToPdf.configure do |config|
+    EmlToPdfExt.configure do |config|
       config.metadata_visible = false
     end
 
@@ -44,7 +44,7 @@ class ConfigurationTest < MiniTest::Test
   end
 
   def metadata_table
-    email = EmlToPdf::Email.new(email_fixture_path("latin1"))
+    email = EmlToPdfExt::Email.new(email_fixture_path("latin1"))
     doc = Nokogiri::HTML(email.to_html)
     doc.at_css(".email-metadata table")
   end

@@ -1,4 +1,4 @@
-module EmlToPdf
+module EmlToPdfExt
   class EmptyPart
     def multipart?
       false

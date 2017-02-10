@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'bundler/setup'
-require 'eml_to_pdf'
+require 'eml_to_pdf_ext'
 require 'nokogiri'
 
 class MiniTest::Test
@@ -8,7 +8,7 @@ class MiniTest::Test
   TEST_FOLDER_PATH = Pathname.new(File.expand_path(__dir__))
 
   def email_fixture_path(name)
-    EmlToPdf::FileEmailProvider.new(fixture_path(name + ".eml", :emails))
+    EmlToPdfExt::FileEmailProvider.new(fixture_path(name + ".eml", :emails))
   end
 
   def read_email_fixture_path(name)

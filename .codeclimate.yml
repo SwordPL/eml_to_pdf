@@ -22,5 +22,5 @@ ratings:
   - "**.py"
   - "**.rb"
 exclude_paths:
-- lib/eml_to_pdf/extraction_step.rb
+- lib/eml_to_pdf_ext/extraction_step.rb
 - test/

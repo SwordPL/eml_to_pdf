@@ -1,4 +1,4 @@
-module EmlToPdf
+module EmlToPdfExt
   class Converter
     def initialize(input_path, output_path)
       @input_path = input_path

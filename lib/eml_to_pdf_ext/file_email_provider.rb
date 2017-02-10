@@ -1,6 +1,6 @@
 require 'mail'
 
-module EmlToPdf
+module EmlToPdfExt
   class FileEmailProvider
     def initialize(input_path)
       @email = Mail.read(input_path)

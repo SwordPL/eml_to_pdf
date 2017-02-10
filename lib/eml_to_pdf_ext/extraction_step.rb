@@ -1,4 +1,4 @@
-module EmlToPdf
+module EmlToPdfExt
   class ExtractionStep
     MIME_TYPES = {
       plain_text: 'text/plain',

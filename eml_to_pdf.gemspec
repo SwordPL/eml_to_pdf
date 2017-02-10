@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'eml_to_pdf/version'
+require 'eml_to_pdf_ext/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'eml_to_pdf_ext'
-  spec.version       = EmlToPdf::VERSION
+  spec.version       = EmlToPdfExt::VERSION
   spec.authors       = ['Yves Siegrist', 'Hubert Pomorski']
   spec.email         = %w(Elektron1c97@gmail.com hubert.pomorski@sabre.com)
 

@@ -2,8 +2,8 @@ require 'test_helper'
 
 class WkhtmltopdfTest < MiniTest::Test
   def test_raises_if_wkhtmltopdf_fails
-    EmlToPdf::Wkhtmltopdf.convert(broken_html, TEST_FOLDER_PATH + ".." + "tmp" + "test_out.pdf")
-  rescue EmlToPdf::Wkhtmltopdf::ConversionError => e
+    EmlToPdfExt::Wkhtmltopdf.convert(broken_html, TEST_FOLDER_PATH + ".." + "tmp" + "test_out.pdf")
+  rescue EmlToPdfExt::Wkhtmltopdf::ConversionError => e
     assert_equal wkhtml_to_pdf_error_message, e.message
 
   end

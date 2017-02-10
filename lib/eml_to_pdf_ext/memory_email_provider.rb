@@ -1,6 +1,6 @@
 require 'mail'
 
-module EmlToPdf
+module EmlToPdfExt
   class MemoryEmailProvider
     def initialize(content)
       @email = Mail.new(content)

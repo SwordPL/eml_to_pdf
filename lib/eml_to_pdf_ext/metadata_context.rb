@@ -2,10 +2,10 @@ require "filesize"
 require "cgi"
 require "ostruct"
 
-module EmlToPdf
+module EmlToPdfExt
   class MetadataContext < OpenStruct
     def config
-      EmlToPdf.configuration
+      EmlToPdfExt.configuration
     end
 
     def format_attachment_size(attachment)

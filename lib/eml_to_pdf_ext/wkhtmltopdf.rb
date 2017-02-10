@@ -1,4 +1,4 @@
-module EmlToPdf
+module EmlToPdfExt
   class Wkhtmltopdf
     class ConversionError < StandardError; end
 

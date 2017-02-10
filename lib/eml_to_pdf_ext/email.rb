@@ -2,7 +2,7 @@ require "pathname"
 require "nokogiri"
 require "erb"
 
-module EmlToPdf
+module EmlToPdfExt
   class Email
     TEMPLATES_PATH = Pathname.new(File.expand_path(__dir__)) + 'templates'
 
@@ -97,15 +97,15 @@ module EmlToPdf
     end
 
     def display_metadata?
-      EmlToPdf.configuration.metadata_visible
+      EmlToPdfExt.configuration.metadata_visible
     end
 
     def links_enabled?
-      EmlToPdf.configuration.links_enabled
+      EmlToPdfExt.configuration.links_enabled
     end
 
     def allowed_formats
-      EmlToPdf.configuration.link_format_whitelist
+      EmlToPdfExt.configuration.link_format_whitelist
     end
   end
 end

@@ -1,4 +1,4 @@
-module EmlToPdf
+module EmlToPdfExt
   class ExtractionStepList
     def initialize(steps)
       @steps = steps

@@ -16,11 +16,11 @@ class FileEmailProviderTest < MiniTest::Test
 
   def teardown
     super
-    EmlToPdf.reset_configuration!
+    EmlToPdfExt.reset_configuration!
   end
 
   def test_type_of_object
-    email = EmlToPdf::FileEmailProvider.new(raw_email_fixture_path("ascii_7bit"))
+    email = EmlToPdfExt::FileEmailProvider.new(raw_email_fixture_path("ascii_7bit"))
     assert_kind_of(Mail::Message, email.email)
   end
 end

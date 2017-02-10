@@ -1,4 +1,4 @@
-# EmlToPdf
+# EmlToPdfExt
 
 Welcome to SwordPL/EmlToPdf fork.
 A small converter to convert an eml file to a pdf.
@@ -11,7 +11,7 @@ This gem uses `wkhtmltopdf`. You can get the installer from [here](http://wkhtml
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'eml_to_pdf'
+gem 'eml_to_pdf_ext'
 ```
 
 And then execute:
@@ -20,7 +20,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install eml_to_pdf
+    $ gem install eml_to_pdf_ext
 
 ## Usage
 
@@ -49,7 +49,7 @@ EmlToPdf.convert("~/Desktop/my_test_email.eml", "~/Desktop/converted_email.pdf")
 
 Or you can use the executable
 
-    $ eml_to_pdf input-path output-path
+    $ eml_to_pdf_ext input-path output-path
 
 ## Development
 
