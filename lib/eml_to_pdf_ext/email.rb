@@ -87,7 +87,7 @@ module EmlToPdfExt
         x['target'] = ''
       end
 
-      links.reject do |x|
+      links.reject { |x| x['href'].nil? }.reject do |x|
         allowed_formats.any? { |format| x['href'].start_with?(format) }
       end.each do |x|
         x['target'] = '_blank'
